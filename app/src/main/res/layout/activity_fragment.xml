@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragmentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+
+<!--activity_fragment는 특정 프레그먼트를 지정하지 않았으므로 프래그먼트 하나를 호스팅하는 어떤 액티비티에도 사용될수 있다.-->
