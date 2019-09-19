@@ -15,7 +15,6 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
     private int thisistest = 0;
     private int thisistest2 = 1;
 
-    private int thisisfromdevelop = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
