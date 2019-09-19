@@ -11,6 +11,10 @@ import android.support.v4.app.FragmentManager;
 public abstract class SingleFragmentActivity extends FragmentActivity {
     protected abstract Fragment createFragment(); //SingleFragmentActivity의 섭 클래스들은 이 메소드를 구현하여 액티비티가 호스팅하는 프레그먼트의 인스턴스를 반환해야함.
 
+
+    private int thisistest = 0;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
