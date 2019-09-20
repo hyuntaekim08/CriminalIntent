@@ -19,7 +19,7 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
 
     private int differencewithtag = 1;
 
-    private double tag = 0.2;
+    private double tag = 0.6;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
