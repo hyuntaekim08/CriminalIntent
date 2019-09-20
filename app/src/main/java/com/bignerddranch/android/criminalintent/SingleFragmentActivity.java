@@ -33,4 +33,7 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
             fm.beginTransaction().add(R.id.fragmentContainer, fragment).commit();
         }
     }
+
+    private String string ="this is for tag 0.0.4 rebase";
+    private String string2 ="this make diff with branch for tag 0.0.4 rebase";
 }
