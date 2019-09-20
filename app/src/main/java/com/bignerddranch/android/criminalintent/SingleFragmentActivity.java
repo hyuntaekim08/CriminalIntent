@@ -17,7 +17,10 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
 
     private int testfromfeaturetest = 0;
 
+    
     private int differencewithtag = 1;
+
+    private double tag = 0.2;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
