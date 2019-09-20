@@ -13,6 +13,8 @@ public class CrimeLab {//CrimeLab은 싱글톤이다. private로 된 생성자�
     private static CrimeLab sCrimeLab;
     private Context mAppContent;
 
+    private String string = "this is test for 0.0.5";
+
     private CrimeLab(Context appContext){//싱글톤에서 Context는 액티비티를 시작, 리소스 액세스, private 저장소를 찾는다.
         mAppContent = appContext;
         mCrimes = new ArrayList<>();
