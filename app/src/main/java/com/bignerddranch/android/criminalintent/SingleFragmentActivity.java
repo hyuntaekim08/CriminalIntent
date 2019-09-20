@@ -17,7 +17,7 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
 
     private int testfromfeaturetest = 0;
 
-    
+    private string diff = "this is still 0.0.2"
     private int differencewithtag = 1;
 
     private double tag = 0.2;
