@@ -29,16 +29,16 @@ public class CrimeFragment extends Fragment{
         super.onCreate(savedInstanceState);
         mCrime = new Crime();
 
-        UUID crimeId = (UUID)getActivity().getIntent().getSerializableExtra(Constants.EXTRA_CRIME_ID);//자신을 호스팅하는 CrimeActivity의 인텐트의 정보를 이렇게 불러온다.
-        mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);//위의 id를 가지고 crimelab에 매치된 crime 요소를 가지고 온다.
+        UUID crimeId = (UUID)getActivity().getIntent().getSerializableExtra(Constants.EXTRA_CRIME_ID);
+        mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState){//프레그먼트는 뷰를 onCreate에 생성하지 않고 여기에 함
-        View v = inflater.inflate(R.layout.fragment_crime, parent, false);//첫번째 인자 레이아웃, 두번째 뷰의 부모, 세번째 뷰를 뷰의 부모에 추가할것인지 여부
+    public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState){
+        View v = inflater.inflate(R.layout.fragment_crime, parent, false);
         //세번째 인자가 false인 이유는 뷰를 부모가 아니라 호스팅 액티비티에 추가할 것이기 때문.
 
-        mTitleField = (EditText)v.findViewById(R.id.crime_title); //주의!!!!! v.으로 시작 해야 됨
+        mTitleField = (EditText)v.findViewById(R.id.crime_title);
         mTitleField.setText(mCrime.getTitle());
         mTitleField.addTextChangedListener(new TextWatcher() {
             @Override
