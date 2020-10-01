@@ -18,7 +18,7 @@ import java.util.UUID;
  * Created by hyuntae on 2016-05-13.
  */
 public class CrimeFragment extends Fragment{
-    public static final String EXTRA_CRIME_ID = "com.bignerddranch.android.criminalintent.crime_id";
+
     private Crime mCrime;
     private EditText mTitleField;
     private Button mDateButton;
@@ -29,7 +29,7 @@ public class CrimeFragment extends Fragment{
         super.onCreate(savedInstanceState);
         mCrime = new Crime();
 
-        UUID crimeId = (UUID)getActivity().getIntent().getSerializableExtra(EXTRA_CRIME_ID);//자신을 호스팅하는 CrimeActivity의 인텐트의 정보를 이렇게 불러온다.
+        UUID crimeId = (UUID)getActivity().getIntent().getSerializableExtra(Constants.EXTRA_CRIME_ID);//자신을 호스팅하는 CrimeActivity의 인텐트의 정보를 이렇게 불러온다.
         mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);//위의 id를 가지고 crimelab에 매치된 crime 요소를 가지고 온다.
     }
 
