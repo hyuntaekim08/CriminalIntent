@@ -35,11 +35,10 @@ public class CrimeListFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
-        Crime c = ((CrimeAdapter)getListAdapter()).getItem(position);//getListAdapter는 ListFragment의 편의 메소드. 리스트뷰에 설정된 어답터 반환.
-        //Log.d(TAG, c.getTitle()+" was Clicked");
+        Crime c = ((CrimeAdapter)getListAdapter()).getItem(position);
 
         Intent i = new Intent(getActivity(), CrimeActivity.class);
-        i.putExtra(CrimeFragment.EXTRA_CRIME_ID, c.getId());
+        i.putExtra(Constants.EXTRA_CRIME_ID, c.getId());
         startActivity(i);
     }
 
@@ -53,10 +52,10 @@ public class CrimeListFragment extends ListFragment {
             if(convertView ==  null){
                 convertView = getActivity().getLayoutInflater().inflate(R.layout.list_item_crime, null);
             }
-            Crime c = getItem(position);//제대로된 item을 가져와야 view나 버튼에 알맞은 값을 저장한다.
+            Crime c = getItem(position);
 
             TextView titleTextView = (TextView)convertView.findViewById(R.id.crime_list_item_dateTextView);
-            titleTextView.setText(c.getTitle());//반드시 setText메소드로 저장하고 값은 crime 클래스에 정의된 것을 가지고 온다.
+            titleTextView.setText(c.getTitle());
 
             TextView dateTextView = (TextView)convertView.findViewById(R.id.crime_list_item_dateTextView);
             dateTextView.setText(c.getDate().toString());
