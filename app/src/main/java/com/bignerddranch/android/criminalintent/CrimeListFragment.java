@@ -17,18 +17,13 @@ import java.util.ArrayList;
  * Created by hyuntae on 2016-05-16.
  */
 public class CrimeListFragment extends ListFragment {
-    private static final String TAG = "CrimeListFragment";
     private ArrayList<Crime> mCrimes;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         getActivity().setTitle(R.string.crimes_title);
-        mCrimes = CrimeLab.get(getActivity()).getCrimes(); //와 씨발 이거 잘봐 어떻게 객체불러오는지;;;어려움.
-        //첫번째 2번인자인 리소스id에 필요한 context객체, ArrayAdapter가 사용할 레이아웃, 모델
-        //ArrayAdapter<Crime> adapter = new ArrayAdapter<Crime>(getActivity(), android.R.layout.simple_list_item_1, mCrimes);
-        //setListAdapter(adapter);//ListFragment의 편의 메소드
-
+        mCrimes = CrimeLab.get().getCrimes();
         CrimeAdapter adapter = new CrimeAdapter(mCrimes);
         setListAdapter(adapter);
     }
@@ -43,7 +38,7 @@ public class CrimeListFragment extends ListFragment {
     }
 
     private class CrimeAdapter extends ArrayAdapter<Crime>{
-        public CrimeAdapter(ArrayList<Crime> crimes){//Crime객체만을 저장한다.
+        public CrimeAdapter(ArrayList<Crime> crimes){
             super(getActivity(), 0, crimes);
         }
 

@@ -13,7 +13,7 @@ public class Crime {
     private boolean mSolved;
 
     public Crime(){
-        mId = UUID.randomUUID();//crime이 생성될때 마다 임의의 ID를 넣는다(그럼 id는 게터 함수로 확인해야겠다)
+        mId = UUID.randomUUID();
         mDate = new Date();
     }
 
