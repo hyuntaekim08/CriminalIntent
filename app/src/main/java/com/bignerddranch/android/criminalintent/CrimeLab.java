@@ -13,8 +13,10 @@ import java.util.UUID;
 public class CrimeLab {
     private ArrayList<Crime> mCrimes;
     private static CrimeLab sCrimeLab;
+    private Context mAppContent;
 
-    private CrimeLab(){//싱글톤에서 Context는 액티비티를 시작, 리소스 액세스, private 저장소를 찾는다.
+    private CrimeLab(Context appContext){//싱글톤에서 Context는 액티비티를 시작, 리소스 액세스, private 저장소를 찾는다.
+        mAppContent = appContext;
         mCrimes = new ArrayList<>();
         for(int i=0; i <100; i++){
             Crime c = new Crime();//Crime 객체를 여기 생성해서 타이틀 설정
@@ -25,9 +27,9 @@ public class CrimeLab {
         }
     }
 
-    public static CrimeLab get(){//Context 파라메터는 직접 생성자에 전달하지 않고 get을 통해 전달.
+    public static CrimeLab get(Context c){//Context 파라메터는 직접 생성자에 전달하지 않고 get을 통해 전달.
         if(sCrimeLab == null){
-            sCrimeLab = new CrimeLab();//getApplicationContext는 앱 생명 주기동안 없어지지 않고 전체앱에서 사용가능
+            sCrimeLab = new CrimeLab(c.getApplicationContext());//getApplicationContext는 앱 생명 주기동안 없어지지 않고 전체앱에서 사용가능
         }
         return sCrimeLab;
     }

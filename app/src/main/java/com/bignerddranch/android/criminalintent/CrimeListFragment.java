@@ -17,13 +17,14 @@ import java.util.ArrayList;
  * Created by hyuntae on 2016-05-16.
  */
 public class CrimeListFragment extends ListFragment {
+    private static final String TAG = "CrimeListFragment";
     private ArrayList<Crime> mCrimes;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         getActivity().setTitle(R.string.crimes_title);
-        mCrimes = CrimeLab.get().getCrimes();
+        mCrimes = CrimeLab.get(getActivity()).getCrimes(); 
         CrimeAdapter adapter = new CrimeAdapter(mCrimes);
         setListAdapter(adapter);
     }
@@ -38,7 +39,7 @@ public class CrimeListFragment extends ListFragment {
     }
 
     private class CrimeAdapter extends ArrayAdapter<Crime>{
-        public CrimeAdapter(ArrayList<Crime> crimes){
+        public CrimeAdapter(ArrayList<Crime> crimes){//Crime객체만을 저장한다.
             super(getActivity(), 0, crimes);
         }
 
