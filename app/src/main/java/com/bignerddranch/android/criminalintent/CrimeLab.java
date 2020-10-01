@@ -25,7 +25,7 @@ public class CrimeLab {
         }
     }
 
-    public static CrimeLab get(){
+    public static CrimeLab get(){//Context 파라메터는 직접 생성자에 전달하지 않고 get을 통해 전달.
         if(sCrimeLab == null){
             sCrimeLab = new CrimeLab();//getApplicationContext는 앱 생명 주기동안 없어지지 않고 전체앱에서 사용가능
         }
