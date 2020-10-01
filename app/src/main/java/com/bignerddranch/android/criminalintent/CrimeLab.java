@@ -7,8 +7,10 @@ import java.util.UUID;
 
 /**
  * Created by hyuntae on 2016-05-16.
+ *
+ * CrimeLab은 싱글톤이다. private로 된 생성자와 인스턴스를 반환하는 get함수 반드시 선언
  */
-public class CrimeLab {//CrimeLab은 싱글톤이다. private로 된 생성자와 인스턴스를 반환하는 get함수 반드시 선언
+public class CrimeLab {
     private ArrayList<Crime> mCrimes;
     private static CrimeLab sCrimeLab;
     private Context mAppContent;
@@ -21,7 +23,7 @@ public class CrimeLab {//CrimeLab은 싱글톤이다. private로 된 생성자�
             c.setTitle("범죄 #" +i);
             //범죄해결여부 홀수는 false, 짝수는 true
             c.setSolved(i%2==0);
-            mCrimes.add(c);//ArrayList는 add함수를 써서 객체를 등록한다. i로 순회할 필요 없음.
+            mCrimes.add(c);
         }
     }
 
@@ -36,7 +38,7 @@ public class CrimeLab {//CrimeLab은 싱글톤이다. private로 된 생성자�
         return mCrimes;
     }
 
-    public Crime getCrime(UUID id){ //Id를 이용한 단일 crime 찾기.. ID를 어떻게 얻는지 잘 관찰할것
+    public Crime getCrime(UUID id){
         for(Crime c: mCrimes){
             if(c.getId().equals(id))
                 return c;

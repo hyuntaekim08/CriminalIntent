@@ -7,9 +7,9 @@ import java.util.UUID;
  * Created by hyuntae on 2016-05-13.
  */
 public class Crime {
-    private UUID mId;
+    private final UUID mId;
     private String mTitle;
-    private Date mDate;
+    private final Date mDate;
     private boolean mSolved;
 
     public Crime(){
@@ -33,10 +33,6 @@ public class Crime {
         return mDate;
     }
 
-    public void setDate(Date mDate) {
-        this.mDate = mDate;
-    }
-
     public boolean isSolved(){
         return mSolved;
     }
@@ -45,7 +41,7 @@ public class Crime {
         this.mSolved = mSolved;
     }
 
-    @Override//리스트 뷰에 다른 정보는 빼고(toString오버라이드 안하면 잡다한거 들어감) 타이틀만 넣는다.
+    @Override
     public String toString(){
         return mTitle;
     }
