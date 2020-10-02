@@ -32,7 +32,7 @@ public class CrimeListFragment extends ListFragment {
         CrimeAdapter adapter = new CrimeAdapter(mCrimes);
         setListAdapter(adapter);
     }
-
+    
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
         Crime c = ((CrimeAdapter)getListAdapter()).getItem(position);

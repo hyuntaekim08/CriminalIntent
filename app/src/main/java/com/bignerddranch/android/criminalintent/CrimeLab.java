@@ -34,7 +34,7 @@ public class CrimeLab {
         return sCrimeLab;
     }
 
-    
+
     public ArrayList<Crime> getCrimes(){
         return mCrimes;
     }
