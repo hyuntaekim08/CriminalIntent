@@ -32,7 +32,7 @@ public class CrimeListFragment extends ListFragment {
         CrimeAdapter adapter = new CrimeAdapter(mCrimes);
         setListAdapter(adapter);
     }
-    
+
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
         Crime c = ((CrimeAdapter)getListAdapter()).getItem(position);
@@ -42,6 +42,7 @@ public class CrimeListFragment extends ListFragment {
         startActivity(i);
     }
 
+    
     private class CrimeAdapter extends ArrayAdapter<Crime>{
         public CrimeAdapter(ArrayList<Crime> crimes){//Crime객체만을 저장한다.
             super(getActivity(), 0, crimes);
