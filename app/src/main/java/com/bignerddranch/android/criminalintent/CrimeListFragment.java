@@ -42,7 +42,7 @@ public class CrimeListFragment extends ListFragment {
     }
 
     private class CrimeAdapter extends ArrayAdapter<Crime>{
-        public CrimeAdapter(ArrayList<Crime> crimes){//Crime객체만을 저장한다.
+        public CrimeAdapter(ArrayList<Crime> crimes){
             super(getActivity(), 0, crimes);
         }
 
