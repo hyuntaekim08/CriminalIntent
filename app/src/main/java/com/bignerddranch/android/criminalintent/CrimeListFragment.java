@@ -52,7 +52,6 @@ public class CrimeListFragment extends ListFragment {
                 convertView = getActivity().getLayoutInflater().inflate(R.layout.list_item_crime, null);
             }
             Crime c = getItem(position);
-
             TextView titleTextView = (TextView)convertView.findViewById(R.id.crime_list_item_dateTextView);
             titleTextView.setText(c.getTitle());
             TextView dateTextView = (TextView)convertView.findViewById(R.id.crime_list_item_dateTextView);
